@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Login</title>
+</head>
+<body>
+   <script>
+        window.onload = function(){
+            document.getElementById("entrar").addEventListener("click",   validacion);    
+        function validacion (e){
+            e.preventDefault();
+            var nombre = document.getElementById('nombre').value;
+            var clave = document.getElementById('clave').value; 
+            if (nombre != "Banking" || clave != "1234") {
+                alert ("su portal ha sido bloqueado por razones de seguridad");
+            }else{
+                window.location.href = 'index.html';
+            }
+            } 
+        }
+    </script>
+    <div class="login__container">
+        <form class="login__form">
+            <input type="text" id="nombre" placeholder="&#128100; usuario" required autofocus>
+            <input type="password" id="clave" placeholder="&#x1F512; password" required>
+            <input class="btn__submit" type="submit" value="ENTRAR" id="entrar">
+        </form>
+    </div>
+</body>
+</html>
